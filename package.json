@@ -4,10 +4,9 @@
   "private": true,
   "author": {
     "name": "Dipesh Yadav",
-    "email": "dipeshyadav@example.com",
-    "url": "https://github.com/dipeshyadav"
+    "email": "dipeshyadav0510@gmail.com"
   },
-  "description": "Dipesh Yadav - Full-stack web developer crafting modern and innovative digital solutions.",
+  "description": "Dipesh Yadav - Computer Science Devotee crafting modern and innovative digital solutions.",
   "keywords": [
     "react",
     "next",
@@ -22,26 +21,6 @@
     "framer-motion",
     "3d-website",
     "particle-effect"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dipeshyadav/modern-portfolio.git"
-  },
-  "homepage": "https://github.com/dipeshyadav/modern-portfolio#readme",
-  "bugs": {
-    "url": "https://github.com/dipeshyadav/modern-portfolio/issues",
-    "email": "dipeshyadav@example.com"
-  },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
-    },
-    {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
-    }
   ],
   "scripts": {
     "dev": "next dev",
@@ -61,7 +40,8 @@
     "react-tsparticles": "^2.9.3",
     "swiper": "^9.4.0",
     "tailwind-scrollbar": "^3.0.4",
-    "tsparticles": "^2.9.3"
+    "tsparticles": "^2.9.3",
+    "word-wrap": "^1.2.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

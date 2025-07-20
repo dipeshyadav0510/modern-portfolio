@@ -26,9 +26,6 @@ module.exports = {
         'accent-3': '#6366F1', // Indigo
       },
       backgroundImage: {
-        explosion: 'url("/bg-explosion.png")',
-        circles: 'url("/circles.png")',
-        circleStar: 'url("/circle-star.svg")',
         site: 'url("/site-bg.svg")',
       },
       animation: {

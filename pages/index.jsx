@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 const Home = () => {
   const [typingProgress, setTypingProgress] = useState(0);
-  const [typedText, setTypedText] = useState("");
+  const [typedText, setTypedText] = useState("Dipesh Yadav");
   const [shouldStartTyping, setShouldStartTyping] = useState(false);
 
   // Start typing after component mounts
@@ -26,9 +26,16 @@ const Home = () => {
     return typingProgress > fadeStart ? progress : 0;
   };
 
+  // Handle typed text updates
+  const handleType = (text) => {
+    setTypedText(text);
+    setTypingProgress(text.length / "Dipesh Yadav".length);
+  };
+
   // Split the typed text into first and last name
-  const firstName = typedText.slice(0, 6); // "Dipesh"
-  const lastName = typedText.slice(7); // "Yadav" (skipping the space)
+  const nameParts = typedText.split(" ");
+  const firstName = nameParts[0] || "";
+  const lastName = nameParts[1] || "";
 
   return (
     <div className="bg-primary h-full overflow-hidden">
@@ -50,6 +57,19 @@ const Home = () => {
             {/* Left column - Text content */}
             <div className="flex flex-col justify-center xl:justify-start h-full relative">
               <div className="absolute top-1/2 left-1/2 xl:left-0 transform -translate-y-1/2 -translate-x-1/2 xl:-translate-x-0 w-full max-w-[600px]">
+                {/* Mobile Avatar */}
+                <div className="xl:hidden flex justify-center mb-8">
+                  <motion.div
+                    variants={fadeIn("down", 0.5)}
+                    initial="hidden"
+                    animate="show"
+                    exit="hidden"
+                    className="w-[120px] h-[120px]"
+                  >
+                    <Avatar isMobile={true} />
+                  </motion.div>
+                </div>
+
                 {/* Hello I'm - Fixed height */}
                 <div className="h-[50px] lg:h-[60px] mb-2">
                   <h2 className="text-[36px] lg:text-[42px] font-medium leading-tight tracking-[-1px] whitespace-nowrap text-center xl:text-left">
@@ -61,15 +81,14 @@ const Home = () => {
                 <div className="h-[90px] lg:h-[120px] mb-4">
                   <h1 className="text-[55px] lg:text-[90px] font-bold whitespace-nowrap text-center xl:text-left">
                     <span className="text-white">{firstName}</span>
-                    <span className="inline-block w-[0.3em]"></span>
+                    {firstName && lastName && <span className="inline-block w-[0.3em]"></span>}
                     <span className="text-accent">{lastName}</span>
                     {shouldStartTyping && (
                       <TypeWriter 
                         text="Dipesh Yadav"
                         delay={200}
-                        onProgress={setTypingProgress}
+                        onType={handleType}
                         className="opacity-0 absolute"
-                        onType={setTypedText}
                       />
                     )}
                   </h1>
@@ -83,24 +102,24 @@ const Home = () => {
                     transition={{ duration: 0.3 }}
                     className="text-[26px] lg:text-[36px] font-semibold text-white/80 text-center xl:text-left"
                   >
-                    Full-Stack Developer
+                    Computer Science Devotee
                   </motion.h3>
                 </div>
 
                 {/* Description - Fixed height */}
-                <div className="h-[100px] lg:h-[120px] mb-4">
+                <div className="min-h-[100px] lg:h-[120px] mb-8 lg:mb-4">
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: getOpacity(0.1) }}
                     transition={{ duration: 0.3 }}
-                    className="max-w-xl mx-auto xl:mx-0 text-lg xl:text-xl text-white/70 text-center xl:text-left"
+                    className="max-w-xl mx-auto xl:mx-0 text-lg xl:text-xl text-white/70 text-center xl:text-left px-4 xl:px-0"
                   >
-                    Passionate about crafting innovative digital solutions and transforming ideas into seamless, user-centric experiences. Specializing in modern web technologies and creative development.
+                    I view computer science as a medium to express my creativity and build things that can help communities. Learning this subject beyond the curriculum gives me a sense of satisfaction and happiness.
                   </motion.p>
                 </div>
 
                 {/* Button - Fixed height */}
-                <div className="h-[50px] flex justify-center xl:justify-start">
+                <div className="h-[50px] flex justify-center xl:justify-start mt-4 lg:mt-0">
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: getOpacity(0.2) }}

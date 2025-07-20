@@ -1,17 +1,20 @@
 import { Particles } from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 
-const ParticlesContainer = () => {
+const ParticlesContainer = ({ color = '#06B6D4' }) => {
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
+  const particlesLoaded = useCallback(async () => {}, []);
+
   return (
     <Particles
-      className="absolute w-full h-full z-0"
+      className="w-full h-full absolute translate-z-0"
       id="tsparticles"
       init={particlesInit}
+      loaded={particlesLoaded}
       options={{
         fullScreen: { enable: false },
         background: {
@@ -34,23 +37,23 @@ const ParticlesContainer = () => {
           },
           modes: {
             push: {
-              quantity: 4,
+              quantity: 90,
             },
             repulse: {
-              distance: 150,
+              distance: 200,
               duration: 0.4,
             },
           },
         },
         particles: {
           color: {
-            value: "#06B6D4",
+            value: color,
           },
           links: {
-            color: "#06B6D4",
+            color: color,
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.5,
             width: 1,
           },
           collisions: {
@@ -71,16 +74,16 @@ const ParticlesContainer = () => {
               enable: true,
               area: 800,
             },
-            value: 50,
+            value: 80,
           },
           opacity: {
-            value: 0.15,
+            value: 0.5,
           },
           shape: {
             type: "circle",
           },
           size: {
-            value: { min: 1, max: 3 },
+            value: { min: 1, max: 5 },
           },
         },
         detectRetina: true,

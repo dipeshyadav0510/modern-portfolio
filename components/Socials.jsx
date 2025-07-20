@@ -1,62 +1,59 @@
 import Link from "next/link";
-
 import {
-  RiYoutubeLine,
   RiInstagramLine,
   RiFacebookLine,
-  RiDribbbleLine,
+  RiWhatsappLine,
   RiGithubLine,
-  RiPinterestLine,
 } from "react-icons/ri";
+import { FaViber } from "react-icons/fa";
+import socialConfig from "../config/social_config";
 
-export const socialData = [
+const socialData = [
   {
-    name: "YouTube",
-    link: "https://youtube.com",
-    Icon: RiYoutubeLine,
+    name: "GitHub",
+    link: socialConfig.github.url,
+    Icon: RiGithubLine,
+    enabled: socialConfig.github.enabled,
   },
   {
     name: "Instagram",
-    link: "https://instagram.com",
+    link: socialConfig.instagram.url,
     Icon: RiInstagramLine,
+    enabled: socialConfig.instagram.enabled,
   },
   {
     name: "Facebook",
-    link: "https://facebook.com",
+    link: socialConfig.facebook.url,
     Icon: RiFacebookLine,
+    enabled: socialConfig.facebook.enabled,
   },
   {
-    name: "Dribbble",
-    link: "https://dribbble.com",
-    Icon: RiDribbbleLine,
+    name: "WhatsApp",
+    link: socialConfig.whatsapp.url,
+    Icon: RiWhatsappLine,
+    enabled: socialConfig.whatsapp.enabled,
   },
   {
-    name: "Pinterest",
-    link: "https://pinterest.com",
-    Icon: RiPinterestLine,
-  },
-  {
-    name: "Github",
-    link: "https://github.com/sanidhyy/modern-portfolio",
-    Icon: RiGithubLine,
+    name: "Viber",
+    link: socialConfig.viber.url,
+    Icon: FaViber,
+    enabled: socialConfig.viber.enabled,
   },
 ];
 
 const Socials = () => {
   return (
     <div className="flex items-center gap-x-5 text-lg">
-      {socialData.map((social, i) => (
+      {socialData
+        .filter((social) => social.enabled)
+        .map((social, i) => (
         <Link
           key={i}
           title={social.name}
           href={social.link}
           target="_blank"
           rel="noreferrer noopener"
-          className={`${
-            social.name === "Github"
-              ? "bg-accent rounded-full p-[5px] hover:text-white"
-              : "hover:text-accent"
-          } transition-all duration-300`}
+            className="hover:text-accent transition-all duration-300"
         >
           <social.Icon aria-hidden />
           <span className="sr-only">{social.name}</span>

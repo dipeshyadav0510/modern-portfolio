@@ -1,5 +1,6 @@
 import { Sora } from "next/font/google";
 import Head from "next/head";
+import { usePathname } from "next/navigation";
 
 import Header from "../components/Header";
 import Nav from "../components/Nav";
@@ -12,13 +13,21 @@ const sora = Sora({
 });
 
 const Layout = ({ children }) => {
+  const pathname = usePathname();
+
+  // Get page title based on current path
+  const getPageTitle = () => {
+    const path = pathname === '/' ? 'Portfolio' : pathname.slice(1);
+    return `Dipesh Yadav | ${path.charAt(0).toUpperCase() + path.slice(1)}`;
+  };
+
   return (
     <main
       className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
     >
       {/* metadata */}
       <Head>
-        <title>Dipesh Yadav | Portfolio</title>
+        <title>{getPageTitle()}</title>
         <meta
           name="description"
           content="Dipesh Yadav - Full-stack web developer crafting modern and innovative digital solutions."

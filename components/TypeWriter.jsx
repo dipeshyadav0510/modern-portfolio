@@ -1,50 +1,53 @@
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-const TypeWriter = ({ text, className, delay = 100, onComplete, onProgress, onType }) => {
-  const [displayText, setDisplayText] = useState("");
-  const [isTypingComplete, setIsTypingComplete] = useState(false);
+const TypeWriter = ({ text, delay = 100, className = "", onType = () => {}, onComplete = () => {} }) => {
+  const [displayText, setDisplayText] = useState(text);
+  const [currentIndex, setCurrentIndex] = useState(text.length);
+  const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
 
+  // Handle initial server-side rendering
   useEffect(() => {
-    setDisplayText("");
-    setIsTypingComplete(false);
-    
-    let currentIndex = 0;
-    let mounted = true;
+    setIsClient(true);
+    setDisplayText('');
+    setCurrentIndex(0);
+  }, []);
 
-    const timer = setInterval(() => {
-      if (currentIndex < text.length && mounted) {
-        const newText = text.substring(0, currentIndex + 1);
+  // Handle typing effect on client-side only
+  useEffect(() => {
+    if (!isClient) return;
+
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        const newText = text.slice(0, currentIndex + 1);
         setDisplayText(newText);
-        if (onType) onType(newText);
-        currentIndex++;
-        
-        if (onProgress) {
-          const progress = currentIndex / text.length;
-          onProgress(progress);
-        }
-      } else if (mounted) {
-        clearInterval(timer);
-        setIsTypingComplete(true);
-        if (onComplete) onComplete();
-      }
-    }, delay);
+        setCurrentIndex(currentIndex + 1);
+        onType(newText); // Pass the actual text instead of progress
+      }, delay);
 
-    return () => {
-      mounted = false;
-      clearInterval(timer);
-    };
-  }, [text, delay, onComplete, onProgress, onType]);
+      return () => clearTimeout(timeout);
+    } else {
+      onComplete();
+    }
+  }, [currentIndex, delay, text, onType, onComplete, isClient]);
+
+  // Reset typing effect when route changes
+  useEffect(() => {
+    setDisplayText('');
+    setCurrentIndex(0);
+  }, [router.asPath]);
+
+  // On server-side or first render, show full text
+  if (!isClient) {
+    return <span className={className}>{text}</span>;
+  }
 
   return (
     <span className={className}>
       {displayText}
-      {!isTypingComplete && (
-        <motion.span
-          animate={{ opacity: [1, 0, 1] }}
-          transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-          className="inline-block w-[3px] h-[1em] bg-accent ml-1 align-middle"
-        />
+      {currentIndex < text.length && (
+        <span className="animate-pulse">|</span>
       )}
     </span>
   );

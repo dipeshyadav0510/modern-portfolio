@@ -1,6 +1,22 @@
 import { motion } from "framer-motion";
 
 const NeonElements = () => {
+  // Define monochromatic color palette
+  const neonColors = {
+    primary: {
+      color: '#8B5CF6',  // Main purple
+      rgb: '139,92,246'
+    },
+    secondary: {
+      color: '#6366F1',  // Indigo
+      rgb: '99,102,241'
+    },
+    accent: {
+      color: '#A78BFA',  // Light purple
+      rgb: '167,139,250'
+    }
+  };
+
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
       {/* Large half circle at left edge */}
@@ -21,9 +37,9 @@ const NeonElements = () => {
           width: '50%',
           height: '600px',
           transform: 'translateY(-50%)',
-          borderColor: '#06B6D4',
-          boxShadow: '0 0 80px #06B6D4',
-          background: 'radial-gradient(circle at left, rgba(6,182,212,0.15) 0%, transparent 70%)',
+          borderColor: neonColors.primary.color,
+          boxShadow: `0 0 80px ${neonColors.primary.color}`,
+          background: `radial-gradient(circle at left, rgba(${neonColors.primary.rgb},0.15) 0%, transparent 70%)`,
         }}
       />
 
@@ -47,9 +63,9 @@ const NeonElements = () => {
             top: `${[10, 85, 90, -10, 40][i]}%`,
             width: `${180 + i * 40}px`,
             height: `${180 + i * 40}px`,
-            borderColor: i % 2 === 0 ? '#06B6D4' : '#6366F1',
-            boxShadow: `0 0 60px ${i % 2 === 0 ? '#06B6D4' : '#6366F1'}`,
-            background: `radial-gradient(circle, ${i % 2 === 0 ? 'rgba(6,182,212,0.15)' : 'rgba(99,102,241,0.15)'} 0%, transparent 70%)`,
+            borderColor: i % 2 === 0 ? neonColors.primary.color : neonColors.secondary.color,
+            boxShadow: `0 0 60px ${i % 2 === 0 ? neonColors.primary.color : neonColors.secondary.color}`,
+            background: `radial-gradient(circle, rgba(${i % 2 === 0 ? neonColors.primary.rgb : neonColors.secondary.rgb},0.15) 0%, transparent 70%)`,
           }}
         />
       ))}
@@ -74,8 +90,8 @@ const NeonElements = () => {
             width: '40%',
             height: '2px',
             transform: `rotate(${i * 45}deg)`,
-            background: `linear-gradient(90deg, transparent, ${i % 2 === 0 ? '#06B6D4' : '#3B82F6'}, transparent)`,
-            boxShadow: `0 0 30px ${i % 2 === 0 ? '#06B6D4' : '#3B82F6'}`,
+            background: `linear-gradient(90deg, transparent, ${neonColors.accent.color}, transparent)`,
+            boxShadow: `0 0 30px ${neonColors.accent.color}`,
           }}
         />
       ))}
@@ -99,9 +115,9 @@ const NeonElements = () => {
           style={{
             left: `${5 + (i * 6.5)}%`,
             top: `${Math.sin(i * 0.8) * 30 + 50}%`,
-            background: i % 3 === 0 ? '#06B6D4' : i % 3 === 1 ? '#3B82F6' : '#6366F1',
-            boxShadow: `0 0 20px ${i % 3 === 0 ? '#06B6D4' : i % 3 === 1 ? '#3B82F6' : '#6366F1'},
-                       0 0 40px ${i % 3 === 0 ? '#06B6D4' : i % 3 === 1 ? '#3B82F6' : '#6366F1'}`,
+            background: neonColors.primary.color,
+            boxShadow: `0 0 20px ${neonColors.primary.color},
+                       0 0 40px ${neonColors.primary.color}`,
           }}
         />
       ))}
@@ -127,33 +143,8 @@ const NeonElements = () => {
             width: '300px',
             height: '300px',
             background: i % 2 === 0 
-              ? 'radial-gradient(circle, rgba(6,182,212,0.3) 0%, transparent 70%)'
-              : 'radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%)',
-          }}
-        />
-      ))}
-
-      {/* Glowing accent points spread across */}
-      {[...Array(8)].map((_, i) => (
-        <motion.div
-          key={`accent-${i}`}
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.5, 0.8, 0.5],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: i * 0.3,
-          }}
-          className="absolute w-2 h-2 rounded-full"
-          style={{
-            left: `${[-5, 105, -10, 110, -15, 115, -5, 105][i]}%`,
-            top: `${[15, 85, 45, 65, 25, 75, 35, 55][i]}%`,
-            background: i % 2 === 0 ? '#06B6D4' : '#6366F1',
-            boxShadow: `0 0 30px ${i % 2 === 0 ? '#06B6D4' : '#6366F1'},
-                       0 0 50px ${i % 2 === 0 ? '#06B6D4' : '#6366F1'}`,
+              ? `radial-gradient(circle, rgba(${neonColors.primary.rgb},0.3) 0%, transparent 70%)`
+              : `radial-gradient(circle, rgba(${neonColors.secondary.rgb},0.3) 0%, transparent 70%)`,
           }}
         />
       ))}

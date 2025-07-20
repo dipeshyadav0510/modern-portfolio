@@ -1,16 +1,13 @@
 import { motion } from "framer-motion";
-
-import Bulb from "../../components/Bulb";
-import Circles from "../../components/Circles";
 import ServiceSlider from "../../components/ServiceSlider";
+import ServicesBackground from "../../components/ServicesBackground";
+import TypeWriter from "../../components/TypeWriter";
 import { fadeIn } from "../../variants";
-
-export const serviceData = [];
 
 const Services = () => {
   return (
     <div className="h-full bg-primary/30 py-36 flex items-center">
-      <Circles />
+      <ServicesBackground />
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-x-8">
           {/* text */}
@@ -22,7 +19,9 @@ const Services = () => {
               exit="hidden"
               className="h2 xl:mt-8"
             >
-              My services <span className="text-accent">.</span>
+              <span className="text-[#22C55E]">My</span>
+              <TypeWriter text="&nbsp;Services" className="inline-block" />
+              <span className="text-[#22C55E]">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -31,8 +30,7 @@ const Services = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              tempora eligendi, quisquam tempore sint reiciendis.
+              From concept to deployment, I deliver comprehensive solutions that drive results and exceed expectations.
             </motion.p>
           </div>
 
@@ -48,7 +46,6 @@ const Services = () => {
           </motion.div>
         </div>
       </div>
-      <Bulb />
     </div>
   );
 };
