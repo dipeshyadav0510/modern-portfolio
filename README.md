@@ -229,7 +229,7 @@ If you'd like to contribute:
 
 - GitHub: [@dipeshyadav0510](https://github.com/dipeshyadav0510)
 - Email: dipeshyadav0510@gmail.com
-- Instagram: [@dipeshy923](https://instagram.com/@dipeshy923)
+- Instagram: [@dipeshy923](https://instagram.com/dipeshy923)
 - Portfolio: [dipeshyadav.vercel.app](https://dipeshyadav.vercel.app)
 
 ---
