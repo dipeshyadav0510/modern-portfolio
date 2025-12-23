@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Modern Portfolio
+# Portfolio
 
 A modern, responsive, and minimal personal portfolio website built with **Next.js** and **Tailwind CSS**.
 
