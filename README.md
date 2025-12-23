@@ -23,36 +23,15 @@ It is intended for **learning, customization, and personal branding**.
 
 ---
 
-## 🎯 Features
-
-- 📱 Fully responsive (mobile, tablet, desktop)
-- ⚡ Fast performance with Next.js
-- 🎨 Clean, modern UI using Tailwind CSS
-- 🧩 Reusable React components
-- 🛠 Easy to customize and extend
-- 🌙 Smooth animations with Framer Motion
-- ✨ Interactive particle effects and neon elements
-- 💼 Project showcase with slider
-- 👤 About section with avatar and background effects
-- 📞 Contact page with background animations
-- 🎯 Services slider to showcase offerings
-- 💬 Testimonials slider with client feedback
-- 🔗 Social media integration
-- ⌨️ TypeWriter text animation effect
-- 🌟 Falling stars background animation
-- ♿ Accessible and SEO-friendly
-
----
-
 ## 🛠 Tech Stack
 
-- **Framework:** Next.js
-- **Library:** React
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **Language:** JavaScript (JSX)
-- **Tooling:** PostCSS, ESLint
-- **Icons & Effects:** Custom particle effects, neon elements
+- **Framework:** ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)
+- **Library:** ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+- **Styling:** ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
+- **Animations:** ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?logo=framer&logoColor=white)
+- **Language:** ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+- **Tooling:** ![PostCSS](https://img.shields.io/badge/PostCSS-DD3A0A?logo=postcss&logoColor=white) ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white)
+- **Deployment:** ![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
 
 ---
 
@@ -227,20 +206,35 @@ If you'd like to contribute:
 
 **Dipesh Yadav**
 
-- GitHub: [@dipeshyadav0510](https://github.com/dipeshyadav0510)
-- Email: dipeshyadav0510@gmail.com
-- Instagram: [@dipeshy923](https://instagram.com/dipeshy923)
-- Portfolio: [dipeshyadav.vercel.app](https://dipeshyadav.vercel.app)
+- ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)  
+  [@dipeshyadav0510](https://github.com/dipeshyadav0510)
+
+- ![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)  
+  dipeshyadav0510@gmail.com
+
+- ![Instagram](https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white)  
+  [@dipeshy923](https://instagram.com/dipeshy923)
+
+- ![Portfolio](https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white)  
+  [dipeshyadav.vercel.app](https://dipeshyadav.vercel.app)
 
 ---
 
 ## 🙏 Acknowledgments
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [React Icons](https://react-icons.github.io/react-icons/)
-- [Vercel](https://vercel.com/)
-- Inspiration from various portfolio designs in the dev community
+- ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)  
+  [Next.js Documentation](https://nextjs.org/docs)
+
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)  
+  [Tailwind CSS](https://tailwindcss.com/)
+
+- ![React Icons](https://img.shields.io/badge/React_Icons-61DAFB?logo=react&logoColor=black)  
+  [React Icons](https://react-icons.github.io/react-icons/)
+
+- ![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)  
+  [Vercel](https://vercel.com/)
+
+- 💡 Inspiration from various portfolio designs in the dev community
 
 ---
 
