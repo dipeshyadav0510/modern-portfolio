@@ -55,28 +55,34 @@ export const aboutData = [
     title: "awards",
     info: [
       {
-        title: "Young Scientist Summit-7 Winner",
-        stage: "2023",
-        description: "Featured on national television explaining the project",
+        title: "Most Emerging Team, Yantra Robo War 9.0 by Robotics Association of Nepal",
+        stage: "2024",
       },
       {
-        title: "Best Leadership Award",
+        title: "First Place, Young Scientist Summit-7",
+        stage: "2023",
+        description: "Nepal Television Interview Video",
+        link: "https://drive.google.com/file/d/1Jjt8gElTZYgwThkf9OgIVrgrE0hijTVh/view?usp=sharing"
+      },
+      {
+        title: "First Place, Trinity Inter-College Computer Vision Competition",
         stage: "2025",
       },
       {
-        title: "Best Magazine Designer",
+        title: "First Place, Trinity Mathematics Olympiad Competition",
+        stage: "2025",
+        description: "Prize: NPR. 5,000"
+        },
+      {
+        title: "First Runner-Up, Trinity Battle of Codes",
+        stage: "2025",
+      },
+      {
+        title: "Verbal Recognition, Trinity International Model United Nations 8.0",
         stage: "2025",
       },
       {
         title: "Participant of 3lbs Robo War (Baliyo Ventures)",
-        stage: "2025",
-      },
-      {
-        title: "IT Competition Winner",
-        stage: "2024",
-      },
-      {
-        title: "Yantra 2.0 - Most Emerging Team Award (RAN)",
         stage: "2024",
       },
     ],
@@ -85,12 +91,16 @@ export const aboutData = [
     title: "experience",
     info: [
       {
-        title: "Trinity Sci-Tech Guild (President) - Trinity College",
-        stage: "2023 - 2025",
+        title: "Infinity Magazine Editor (Head) - Trinity College",
+        stage: "2025 - 2026",
       },
       {
-        title: "Magazine Editor (Head) - Trinity College",
+        title: "Trinity Sci-Tech Guild (President) - Trinity College",
         stage: "2024 - 2025",
+      },
+      {
+        title: "Trinity Sci-Tech Guild (Joint Secretary) - Trinity College",
+        stage: "2023 - 2024",
       },
       {
         title: "Robo Assembler and Designer - Baliyo Ventures",
@@ -134,7 +144,7 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px] order-2 xl:order-1 pt-30"
+          className="flex flex-col w-full xl:max-w-[60%] h-[480px] order-2 xl:order-1 pt-30"
         >
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
             {aboutData.map((item, itemI) => (
@@ -163,7 +173,18 @@ const About = () => {
                 <div className="hidden md:flex">-</div>
                 <div>{item.stage}</div>
                 {item.description && (
-                  <div className="text-[#8B5CF6] italic">{item.description}</div>
+                  item.link ? (
+                    <a 
+                      href={item.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#8B5CF6] italic hover:underline cursor-pointer"
+                    >
+                      {item.description}
+                    </a>
+                  ) : (
+                    <div className="text-[#8B5CF6] italic">{item.description}</div>
+                  )
                 )}
 
                 <div className="flex gap-x-4">
