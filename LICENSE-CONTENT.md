@@ -2,7 +2,7 @@
 
 Copyright (c) 2025 Dipesh Yadav
 
-## NOT Licensed Under MIT
+## Following is NOT Licensed Under MIT
 
 The following content is NOT covered by the MIT License in this repository and is protected by copyright:
 
