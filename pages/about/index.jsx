@@ -120,7 +120,19 @@ export const aboutData = [
     title: "credentials",
     info: [
       {
+        title: "Algorithm Specialization - Stanford University (Coursera)",
+        stage: "Ongoing",
+      },
+      {
         title: "Computer Science with PCM - Trinity College, Nepal",
+        stage: "2025",
+      },
+      {
+        title: "Leadership Workshop - Kathmandu Youth Conclave(KYC)",
+        stage: "2025",
+      },
+      {
+        title: "Share Market Training - Kathmandu Youth Conclave(KYC)",
         stage: "2025",
       },
     ],
