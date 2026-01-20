@@ -91,20 +91,28 @@ export const aboutData = [
     title: "experience",
     info: [
       {
-        title: "Infinity Magazine Editor (Head) - Trinity College",
+        title: "Infinity Magazine Editor (Head), Trinity College",
         stage: "2025 - 2026",
       },
       {
-        title: "Trinity Sci-Tech Guild (President) - Trinity College",
+        title: "Trinity Sci-Tech Guild (President), Trinity College",
         stage: "2024 - 2025",
       },
       {
-        title: "Trinity Sci-Tech Guild (Joint Secretary) - Trinity College",
+        title: "Trinity Sci-Tech Guild (Joint Secretary), Trinity College",
         stage: "2023 - 2024",
       },
       {
-        title: "Robo Assembler and Designer - Baliyo Ventures",
-        stage: "Feb 24 - Mar 24",
+        title: "Application Developer, NEA",
+        stage: "October 2025 - November 2025",
+      },
+      {
+        title: "Robotics Tutor, Nightingale College",
+        stage: "July 2025 - August 2025",
+      },
+      {
+        title: "Full-Stack Web Developer, MJCSB",
+        stage: "December 2024 - March 2025",
       },
     ],
   },
